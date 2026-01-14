@@ -1,15 +1,15 @@
 import { HashRouter, Routes, Route, Navigate } from "react-router-dom"
 
-import JaHome from "./pages/ja/JaHome"
-import JaConcept from "./pages/ja/JaConcept"
-import JaHardware from "./pages/ja/JaHardware"
-import JaSoftware from "./pages/ja/JaSoftware"
-import JaBuild from "./pages/ja/JaBuild"
-import JaBuy from "./pages/ja/JaBuy"
-import JaContact from "./pages/ja/JaContact"
+import JaHome from "./pages/ja/main/JaHome"
+import JaConcept from "./pages/ja/main/JaConcept"
+import JaHardware from "./pages/ja/main/JaHardware"
+import JaSoftware from "./pages/ja/main/JaSoftware"
+import JaBuild from "./pages/ja/main/JaBuild"
+import JaBuy from "./pages/ja/main/JaBuy"
+import JaContact from "./pages/ja/main/JaContact"
 
 import EnHome from "./pages/en/EnHome"
-
+import JaDev from "./pages/ja/dev/JaDev"
 
 export default function App() {
   return (
@@ -26,6 +26,7 @@ export default function App() {
         <Route path="/ja/build" element={<JaBuild />} />
         <Route path="/ja/buy" element={<JaBuy />} />
         <Route path="/ja/contact" element={<JaContact />} />
+        <Route path="/ja/dev/main" element={<JaDev />} />
 
         {/* English */}
         <Route path="/en" element={<EnHome />} />

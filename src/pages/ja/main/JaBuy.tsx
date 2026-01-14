@@ -1,4 +1,4 @@
-import JaLayout from "../../layout/JaLayout"
+import JaLayout from "../../../layout/JaLayout"
 
 type GoodsItem = {
   name: string

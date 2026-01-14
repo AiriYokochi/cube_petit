@@ -1,4 +1,4 @@
-import JaLayout from "../../layout/JaLayout"
+import JaLayout from "../../../layout/JaLayout"
 export default function JaPage() {
   return (
     <div style={{ fontFamily: "system-ui, sans-serif", background: "#fafafa", minHeight: "100vh" }}>
