@@ -1,6 +1,94 @@
 import JaLayout from "../../layout/JaLayout"
 
+type GoodsItem = {
+  name: string
+  desc: string
+  price?: string
+  imgAlt: string
+}
+
+function GoodsCard({ name, desc, price, imgAlt }: GoodsItem) {
+  return (
+    <div
+      style={{
+        background: "#fff",
+        borderRadius: 16,
+        padding: 16,
+        boxShadow: "0 6px 20px rgba(0,0,0,0.06)",
+        border: "1px solid #eee",
+        display: "flex",
+        flexDirection: "column",
+        gap: 12,
+        minHeight: 220,
+      }}
+    >
+      {/* Image placeholder */}
+      <div
+        style={{
+          width: "100%",
+          height: 140,
+          borderRadius: 14,
+          background: "linear-gradient(135deg, #f3f5f7, #e9edf2)",
+          border: "1px dashed #cfd6de",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          color: "#667085",
+          fontSize: 13,
+          fontWeight: 700,
+        }}
+      >
+        {imgAlt}（写真準備中）
+      </div>
+
+      {/* Text */}
+      <div style={{ display: "flex", alignItems: "baseline", justifyContent: "space-between", gap: 10 }}>
+        <div style={{ fontSize: 16, fontWeight: 900 }}>{name}</div>
+        {price && (
+          <span
+            style={{
+              fontSize: 12,
+              color: "#111",
+              background: "#f2f2f2",
+              padding: "4px 10px",
+              borderRadius: 999,
+              whiteSpace: "nowrap",
+            }}
+          >
+            {price}
+          </span>
+        )}
+      </div>
+
+      <div style={{ color: "#444", lineHeight: 1.7, fontSize: 14 }}>{desc}</div>
+    </div>
+  )
+}
+
 export default function JaBuy() {
+  const goods: GoodsItem[] = [
+    {
+      name: "アクリルキーホルダー",
+      desc: "CubePetitのイラストを使用したアクリルキーホルダーです。毎年絵柄が変わります。イベント会場などで頒布しています。",
+      imgAlt: "アクリルキーホルダー",
+    },
+    {
+      name: "ウッドキーホルダー",
+      desc: "木の質感を活かしたキーホルダーです。落ち着いた雰囲気で普段使いしやすいデザインを想定しています。",
+      imgAlt: "ウッドキーホルダー",
+    },
+    {
+      name: "マグネット",
+      desc: "デスク周りに貼れるCubePetitグッズです。展示会のノベルティとして頒布しています。",
+      imgAlt: "マグネット",
+    },
+    {
+      name: "シール",
+      desc: "CubePetitのシールです。展示会のノベルティとして頒布しています。",
+      imgAlt: "シール",
+    },
+  ]
+
   return (
     <JaLayout>
       {/* Title */}
@@ -209,6 +297,60 @@ export default function JaBuy() {
               <li>Raspberry Pi 5</li>
               <li>MINISFORUM UM690L Slim</li>
             </ul>
+          </div>
+        </div>
+      </section>
+
+      {/* Goods */}
+      <section style={{ marginTop: 18 }}>
+        <h2 style={{ marginBottom: 10 }}>グッズ作成・頒布</h2>
+
+        <div
+          style={{
+            background: "#fff",
+            borderRadius: 16,
+            padding: 18,
+            boxShadow: "0 6px 20px rgba(0,0,0,0.06)",
+            border: "1px solid #eee",
+          }}
+        >
+          <p style={{ margin: 0, color: "#444", lineHeight: 1.8 }}>
+            CubePetitのグッズも制作しています。展示会・イベント等で頒布をしています。
+            <br />
+            ※在庫状況や頒布方法はイベントごとに異なる場合があります。
+          </p>
+
+          <div
+            style={{
+              marginTop: 14,
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
+              gap: 12,
+            }}
+          >
+            {goods.map((g) => (
+              <GoodsCard key={g.name} {...g} />
+            ))}
+          </div>
+
+          <div style={{ marginTop: 12 }}>
+            <a
+              href="https://www.ros-sier.com/contact"
+              target="_blank"
+              rel="noreferrer"
+              style={{
+                display: "inline-block",
+                textDecoration: "none",
+                background: "#111",
+                color: "#fff",
+                padding: "10px 14px",
+                borderRadius: 999,
+                fontSize: 14,
+                fontWeight: 800,
+              }}
+            >
+              グッズの頒布について問い合わせる →
+            </a>
           </div>
         </div>
       </section>
