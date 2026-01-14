@@ -1,73 +1,74 @@
-# React + TypeScript + Vite
+# cube_petit
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Cube petit の紹介ページ（GitHub Pages）です。  
+日本語 / 英語ページを React + Vite + TypeScript で作成しています。
 
-Currently, two official plugins are available:
+## 🌐 Website
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Japanese: https://airiyokochi.github.io/cube_petit/#/ja
+- English: https://airiyokochi.github.io/cube_petit/#/en
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🛠 Tech Stack
 
-## Expanding the ESLint configuration
+- React
+- TypeScript
+- Vite
+- React Router（HashRouter）
+- GitHub Pages
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 📁 Pages
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+日本語ページ（`#/ja`）は以下の構成です：
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+- コンセプト
+- ハードウェア紹介
+- ソフトウェア紹介
+- CubePetitをつくる（DIY）
+- CubePetitを購入する
+- リンク集・コンタクト・最新情報
+
+---
+
+## 🚀 Development
+
+### 1) Install dependencies
+
+```bash
+yarn
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### 2) Start local server
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+yarn dev
 ```
+
+ブラウザで以下にアクセスできます：
+- http://localhost:5173/#/ja
+- http://localhost:5173/#/en
+
+## 📦 Build
+```
+yarn build
+```
+
+ビルド成果物は `dist/` に生成されます。
+
+## 🚢 Deploy (GitHub Pages)
+
+このリポジトリは GitHub Actions により自動デプロイされます。
+- develop ブランチに push すると自動で gh-pages にデプロイされます
+- 公開URL: https://airiyokochi.github.io/cube_petit/
+
+## 📝 Notes
+- GitHub Pages 配下で動作させるため、`vite.config.ts` で `base` を設定しています
+- ルーティングは GitHub Pages で 404 を避けるため `HashRouter` を使用しています
+
+## 📩 Contact
+
+お問い合わせはこちら：
+https://www.ros-sier.com/contact
